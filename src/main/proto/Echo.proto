@@ -1,0 +1,17 @@
+syntax = "proto3";
+package test;
+option java_multiple_files = true;
+
+
+
+message MessageRequest{
+	string message = 1;
+}
+
+message MessageResponse{
+	string message = 1;
+	string date = 2;
+}
+service Echo{
+	rpc processMessage(MessageRequest) returns (MessageResponse);
+}
