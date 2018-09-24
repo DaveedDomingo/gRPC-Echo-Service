@@ -3,7 +3,7 @@
   <groupId>Echo</groupId>
   <artifactId>Echo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
+
   <dependencies>
 	<dependency>
  	 <groupId>io.grpc</groupId>
@@ -21,7 +21,7 @@
      <version>1.15.0</version>
     </dependency>
   </dependencies>
-  
+
 	<build>
 	  <extensions>
 	    <extension>
@@ -31,8 +31,8 @@
 	    </extension>
 	  </extensions>
 	  <plugins>
-	    
-	  
+
+
 	    <plugin>
 	      <groupId>org.xolstice.maven.plugins</groupId>
 	      <artifactId>protobuf-maven-plugin</artifactId>
@@ -51,8 +51,8 @@
 	        </execution>
 	      </executions>
 	    </plugin>
-	    
-      
+
+
 	    <plugin>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-shade-plugin</artifactId>
@@ -63,15 +63,15 @@
       <phase>package</phase>
       <goals>
          <goal>shade</goal>
-      </goals>   
+      </goals>
       <configuration>
         <transformers>
-          <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">                        
-            <mainClass>test.EchoServer</mainClass>
+          <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+            <mainClass>com.echo.EchoServer</mainClass>
           </transformer>
         </transformers>
         <finalName>EchoServer</finalName>
-      </configuration>        
+      </configuration>
     </execution>
     <execution>
       <id>build-second</id>
@@ -81,19 +81,19 @@
       </goals>   
       <configuration>
         <transformers>
-          <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">                        
-            <mainClass>test.EchoClient</mainClass>
+          <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+            <mainClass>com.echo.EchoClient</mainClass>
           </transformer>
         </transformers>
         <finalName>EchoClient</finalName>
-      </configuration>  
+      </configuration>
     </execution>
   </executions>
 </plugin>
 
-	    
+
 	  </plugins>
 	</build>
-  
-  
+
+
 </project>

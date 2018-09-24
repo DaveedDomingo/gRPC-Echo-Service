@@ -1,7 +1,6 @@
 syntax = "proto3";
-package test;
+package com.echo;
 option java_multiple_files = true;
-
 
 
 message MessageRequest{
